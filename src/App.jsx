@@ -61,7 +61,7 @@ function App() {
   }, [coords])
   
   return (
-    <div className="grid place-content-center min-h-screen bg-cover bg-center p-2" style={{backgroundImage: `url( /public/bg/${weather?.weather[0].icon.slice(0,2)}d.png)`}}>
+    <div className="grid place-content-center min-h-screen bg-cover bg-center p-2" style={{backgroundImage: `url( /bg/${weather?.weather[0].icon.slice(0,2)}d.png)`}}>
     <div className='dark:fixed dark:top-0 dark:left-0 dark:w-screen dark:h-screen dark:bg-gray-700/70 z-0'></div>
         {weather ? (
           <Weather weather={weather} temp={temp} dark={handleThemeSwitch}></Weather>
