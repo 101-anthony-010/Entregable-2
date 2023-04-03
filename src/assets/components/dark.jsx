@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 const Dark = ({dark}) => {
 
   return (
-    <div>
-      <button className='bg-white dark:bg-black dark:text-white' onClick={dark}>darkmode</button>
+    <div className='my-auto ml-2'>
+      <button className='dark:text-white' onClick={dark}><i className='bx bxs-moon text-xl' ></i></button>
     </div>
   )
 }

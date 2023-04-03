@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import Dark from '../dark'
-
-const Weather = ({weather, temp, dark}) => {
+const Weather = ({weather, temp}) => {
 
     const URL = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
     const buttonTemp = [temp.kelvin, temp.celsius, temp.fahrenheit]
@@ -13,7 +11,6 @@ const Weather = ({weather, temp, dark}) => {
 
     return (
     <div className="text-center z-50 dark:text-white">
-      <Dark dark={dark}></Dark>
       <h1 className='pb-10 pt-6 font-bold text-3xl'>{weather.name} {weather.sys.country}</h1>
       <div className='container max-w-xl grid grid-cols-1 sm:grid-cols-3'>
         <section className='sm:col-span-2 grid grid-cols-2 container max-w-sm bg-slate-300/70 m-auto rounded-2xl items-center justify-items-center p-8 dark:bg-slate-950/50'>
@@ -26,19 +23,19 @@ const Weather = ({weather, temp, dark}) => {
         <section className='max-w-sm grid grid-cols-3 sm:grid-cols-1 bg-slate-300/70 sm:mx-8 my-5 rounded-2xl text-xs dark:bg-slate-950/50'>
             <div className='px-5 py-5 grid grid-cols-2 m-auto gap-2'>
                 <div className='my-auto'>
-                    <img src="/icons/wind.png" alt="" />
+                    <i className='bx bx-wind text-2xl'></i>
                 </div>
                 <p className='my-auto'>{weather.wind.speed} m/s</p>
             </div>
             <div className='px-5 py-5 grid grid-cols-2 gap-2'>
                 <div className='my-auto'>
-                    <img src="/icons/humidity.png" alt="" />
+                <i className='bx bxs-droplet text-2xl'></i>
                 </div>
                 <p className='my-auto'>{weather.main.humidity} %</p>
             </div>
             <div className='px-5 py-5 grid grid-cols-2 m-auto gap-2'>
                 <div className='my-auto'>
-                    <img src="/icons/pressure.png" alt="" />
+                <i className='bx bx-sort-alt-2 text-2xl'></i>
                 </div>
                 <p className='my-auto'>{weather.main.pressure} hPa</p>
             </div>
